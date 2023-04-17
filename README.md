@@ -3,4 +3,4 @@
 ### Requires Beautiful Soup library <br /> 
 ## For first time setup, It will create an 'Archives' folder to archive old .csv files. <br />
 ## If you press the enter key when prompted what news you want to see, it will return all news articles.<br />
-## (May need Microsoft Excel to open the .csv file)
+## Works for both Linux and Windows. (Requires Excel for Windows systems)
