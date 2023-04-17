@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from datetime import datetime
+from sys import platform
 import os.path
 import requests
 import csv
@@ -101,8 +102,11 @@ if os.path.exists(name) == False:
     print("File Created.")
     print("Opening File...")
     time.sleep(1)
-    os.system("start EXCEL.exe todays_news_list.csv")
-
+    if platform == "linux" or platform == "linux2":
+	    os.system("xdg-open todays_news_list.csv")
+    else:
+    	os.system("start EXCEL.exe todays_news_list.csv")
+    
 #Archives old csv file. Deletes duplicates otherwise doesnt execute.
 else:
     os.rename("todays_news_list.csv", new_path)
@@ -129,4 +133,7 @@ else:
     print("File Created.")
     print("Opening File...")
     time.sleep(1)
-    os.system("start EXCEL.exe todays_news_list.csv")
+    if platform == "linux" or platform == "linux2":
+	    os.system("xdg-open todays_news_list.csv")
+    else:
+	    os.system("start EXCEL.exe todays_news_list.csv")
